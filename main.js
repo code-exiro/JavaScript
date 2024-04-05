@@ -1,32 +1,24 @@
-//Clase 3, tipos de datos
+//Clase 4, paso por valor y referncia 
 
-//Primitivos - inmutable - 7
+//Paso por valor
 
-let numero = 23
-numero = numero + 12
-console.log(numero)
+let a = 1
+let b = a
 
-let verdad = true 
-verdad = false 
-console.log(verdad)
+a = 2
 
-//Complejos - mutable - 3
+console.log("paso por valor")
+console.log("a = " + a)
+console.log("b = " + b)
 
-let usuario = {nombre: 'Emir', edad: 20}
-usuario.edad = 21
-console.log(usuario)
+//Paso por referencia 
 
-let frutas = ['manzana', 'pera']
-frutas[0] = 'sandia'
-console.log(frutas)
+let x = [1]
+let y = x
 
-//------------------------
+console.log("paso por referencia")
+x.push(2);
+y.push(3);
 
-function cambiarNombre (objeto){
-    objeto.nombre = 'nuevo nombre'
-}
-
-let persona = {nombre: 'Antonio'}
-cambiarNombre(persona)
-
-console.log(persona)
+console.log("x = " + x)
+console.log("y = " + y)
