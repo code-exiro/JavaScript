@@ -1,90 +1,24 @@
-//Clase 6 - Numeros
+// Diferencias entre (), [], {}
 
-//1. Entero y decimal 
-const entero = 10
-const decimal = 3.14
-console.log(typeof entero, typeof decimal)
+/*parentesis --->  se utilizan para controlar el orden de las operaciones en
+                   expresiones matematicas, invocar funciones y especificar parametros*/
 
-//2. Notacion cientifica      //Se puede usar para representar números muy grandes o muy pequeños de manera más concisa
-const cientifico = 35e3       //35e3 se interpreta como "35 multiplicado por 10 elevado a la potencia de 3", lo que resulta en 35,000
+let suma = (1 + 2) * 3 //9  sin parentesis seria 7
+console.log(suma)
 
-//3. infinitos y NaN
-const infinito = Infinity
-const noEsNumber = NaN        //Not-a-Number se utiliza para representar operaciones invalidas como (0/0)
+function saludar(nombre){
+    return `hola, ${nombre}`
+}
+console.log(saludar('Emir'))
 
-// Operaciones aritmeticas
-//1. Suma, Resta, Multiplicacion y Division 
-const suma = 5 + 5
-const resta =  4 - 4
-const multiplicacion = 4 * 5
-const division = 16 / 2
+//corchetes --->  se usan para definir arrays y acceder a elementos de un array mediante su indice
 
-//2. Modulo y Exponencial
-const modulo = 15 % 8           //Devuleve el residuo de division en este caso 7
-const exponencial = 2 ** 3      //Potencias 2*2*2=8
+let numeros = [1, 2, 3, 4, 5]
+console.log(numeros[2])
 
-//Precision                     //Las operaciones con punto decimal no son precisas en JS por el estandar IEEE 754      
-const resultado =0.1 + 0.2
-console.log(resultado)
-console.log(resultado.toFixed(1))
-console.log(resultado === 0.3)
+/*llaves ---> tienen varios usos, incluyendo la definicion de objetos, la creacion de bloques de 
+              codigo(como bucles y condicionales) y la definicion de funciones(arrow function)*/ 
 
-// Operaciones avanzadas        //Librerias que nos ayudan hacer nuestras operaciones mas precisas
-const raizCuadrada = Math.sqrt(16)
-const valorAbsoluto = Math.abs(-7)
-const aleatorio = Math.random()
-console.log(raizCuadrada)
-console.log(valorAbsoluto)
-console.log(aleatorio)
+let persona = {nombre: 'Emir', edad: 21}
 
-console.log('----------------------------------------------')
-
-//Clase 7, Booleanos
-
-const isActive = true           //Buena practica es agregar al inicio de una variable tipo boolean palabras interrogativas 
-const hasPermission = false     //En estos casos nos preguntamos is(es) y has(tener) si es o tenemos esta variable 
-
-// Conversion implicita         
-const result = 5 > 3            //5 es mayor que 3? si = true
-console.log(result)             
-
-const name = 'Erizo'            //Se utilizan para convertir un valor en su equivalente booleano
-console.log(!!name)             //En este caso 'Erizo' es una cadena no vacia lo que significa que es truthy por lo tanto devuleve true
-
-// Conversion explicita
-const value = 0                             //Como su valor es 0 es como si value no tuviera ningun valor entonces es falso(falsy) 
-const otherValue = 34                       //Todos los demas valores los toma como true osea que si almacenan un valor
-const valueNegative = -26                   //Inclusive los negativos
-const whatIsBoolean = Boolean(value)
-console.log(whatIsBoolean)
-
-console.log('-------------------------------------------------')
-
-//Clase 8, tipos de datos primitivos
-
-// null
-const perros = null           //null es un valor especial que representa la ausencia de valor o la no existencia de un objeto
-console.log(perros)            
-console.log(typeof perros)    //devuelve "object" aunque es null no es realmente un objeto, es un error historico de JS
-
-// undefined
-let lastName                  //es un tipo de datos que se asigna a una variable que ha sido declarada pero aun no se le ha asignado un valor     
-console.log(lastName)
-
-// symbol  --->  representa un identificador unico e inmutable  
-const sym1 = Symbol()                 //Los symbol son utiles para crear propiedades de objeto que son unicas
-const sym2 = Symbol('descripcion')    //evitando asi cualquier posible conflicto de nombres que pueda surgir 
-const sym3 = Symbol('descripcion')    //en este ejemplo sym2 y sym3 tienen las misma descripcion pero 
-console.log(sym2 === sym3)            //reprenstan symbols completamente distitos y unicos   
-
-const ID = Symbol('id')     //creamos un symbol  con la descripcion 'id' y se le asigna a la constante 'ID'
-let user = {}               //se declara un objeto vacio 'user'
-user[ID] = '1234'           //utilizamos el symbol 'ID' como clave para incluir un nueva propiedad al objeto 'user'
-console.log(user)
-
-// BigInt  --->  proporciona una manera de representar numeros enteron mas grandes que el valor maximo (el limete es 253 - 1)
-const bigIntLiterl = 627821246748961918343434326398782n
-console.log(bigIntLiterl)
-
-const bigIntConstructor = BigInt("7643877837878473467235892574896296748")
-console.log(bigIntConstructor)
+//Clase 9 - Conversion de tipos 
