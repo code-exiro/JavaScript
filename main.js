@@ -59,3 +59,32 @@ const whatIsBoolean = Boolean(value)
 console.log(whatIsBoolean)
 
 console.log('-------------------------------------------------')
+
+//Clase 8, tipos de datos primitivos
+
+// null
+const perros = null           //null es un valor especial que representa la ausencia de valor o la no existencia de un objeto
+console.log(perros)            
+console.log(typeof perros)    //devuelve "object" aunque es null no es realmente un objeto, es un error historico de JS
+
+// undefined
+let lastName                  //es un tipo de datos que se asigna a una variable que ha sido declarada pero aun no se le ha asignado un valor     
+console.log(lastName)
+
+// symbol  --->  representa un identificador unico e inmutable  
+const sym1 = Symbol()                 //Los symbol son utiles para crear propiedades de objeto que son unicas
+const sym2 = Symbol('descripcion')    //evitando asi cualquier posible conflicto de nombres que pueda surgir 
+const sym3 = Symbol('descripcion')    //en este ejemplo sym2 y sym3 tienen las misma descripcion pero 
+console.log(sym2 === sym3)            //reprenstan symbols completamente distitos y unicos   
+
+const ID = Symbol('id')     //creamos un symbol  con la descripcion 'id' y se le asigna a la constante 'ID'
+let user = {}               //se declara un objeto vacio 'user'
+user[ID] = '1234'           //utilizamos el symbol 'ID' como clave para incluir un nueva propiedad al objeto 'user'
+console.log(user)
+
+// BigInt  --->  proporciona una manera de representar numeros enteron mas grandes que el valor maximo (el limete es 253 - 1)
+const bigIntLiterl = 627821246748961918343434326398782n
+console.log(bigIntLiterl)
+
+const bigIntConstructor = BigInt("7643877837878473467235892574896296748")
+console.log(bigIntConstructor)
