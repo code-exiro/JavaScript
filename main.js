@@ -36,3 +36,26 @@ const aleatorio = Math.random()
 console.log(raizCuadrada)
 console.log(valorAbsoluto)
 console.log(aleatorio)
+
+console.log('----------------------------------------------')
+
+//Clase 7, Booleanos
+
+const isActive = true           //Buena practica es agregar al inicio de una variable tipo boolean palabras interrogativas 
+const hasPermission = false     //En estos casos nos preguntamos is(es) y has(tener) si es o tenemos esta variable 
+
+// Conversion implicita         
+const result = 5 > 3            //5 es mayor que 3? si = true
+console.log(result)             
+
+const name = 'Erizo'            //Se utilizan para convertir un valor en su equivalente booleano
+console.log(!!name)             //En este caso 'Erizo' es una cadena no vacia lo que significa que es truthy por lo tanto devuleve true
+
+// Conversion explicita
+const value = 0                             //Como su valor es 0 es como si value no tuviera ningun valor entonces es falso(falsy) 
+const otherValue = 34                       //Todos los demas valores los toma como true osea que si almacenan un valor
+const valueNegative = -26                   //Inclusive los negativos
+const whatIsBoolean = Boolean(value)
+console.log(whatIsBoolean)
+
+console.log('-------------------------------------------------')
