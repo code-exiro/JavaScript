@@ -68,3 +68,57 @@ console.log('Precio con descuento: $' + precioFinal)
 // console.log('Price with discount: $' + finalPrice)
 
 console.log('-------------------------------------------------------------------')
+
+//Clase 12 - Funciones vs Metodos 
+
+    /*Funcion: es un bloque de código reutilizable que realiza una tarea específica.
+    Puede o no estar asociada a un objeto.*/ 
+
+    /*Metodo: es una función que está asociada a un objeto. 
+    Cuando una función se convierte en propiedad de un objeto, 
+    se llama método. Los métodos son funciones, pero el término 
+    "método" se usa para resaltar su relación con un objeto específico.*/
+
+// Capacidades que tienen las funciones
+
+//1.Pasar funciones como argumentos ---> callback
+/* <------
+function a () {}
+function b (a) {}
+b(a)
+
+//2.Retornan funciones
+function a () {
+    function b () {} 
+    return b
+}
+
+//3.Asignar funciones a variables ---> Expresion de funcion
+const a = function () {}
+
+//4.Tener propiedades y metodos 
+function a () {}
+const obj = {}
+a.call(obj)
+
+//5.Anidar funciones ---> nested functions 
+function a () {
+    function b () {
+        function c () {
+
+        }
+        c()
+    } 
+    b()
+}
+a()
+-----> */ 
+//6.Alamcenar funciones en objetos
+const rocket = {
+    name: 'falcon 9',
+    launchMessage: function launchMessage () {
+        console.log('FLAMA!!!')
+    }
+}
+
+rocket.launchMessage()
