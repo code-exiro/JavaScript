@@ -1,124 +1,48 @@
-//Clase 10 - Proyecto de Social media profile
+//Clase 13 - Funciones puras e impuras
 
-//1. User information
-const userName = 'exiro'
-const fullName = 'Cristiano Ronaldo'
-const age = 21
-const isStudent =  true
+// funciones puras
 
-//2. Address
-const address = {
-    street: '1234 new york',
-    city: 'smallville',
-    state: 'metropolis',
-    zipCode: 82631
+//1.Sin efectos secundarios
+//2.Predecibilidad ---> Para un conjunto de datos siempre devolvera el mismo resultado.
+                       //Esto significa que el resultado de la funcion depende unicamente de los argumentos
+
+function suma (a, b) {      
+    return a + b
 }
 
-//3. Hobbies 
-const hobbies = ['coding', 'Reading', 'Gaming']
-
-//4. Generating personalized bio
-const personalizedBio = `
-Hi, i'm ${fullName}.
-i'm ${age} years old.
-I live in ${address.city}.
-I love ${hobbies.join(', ')}.
-Follow me for coding adventures!.
-`
-//5. print the user profile and bio
-console.log(personalizedBio)
-
-console.log('-------------------------------------------------------')
-
-//Clase 11 - Anatomia de una funcion 
-
-function suma (a, b){     //1.Palabra clave(function) 2.Nombre de nuestra funcion(suma en este caso)   
-    return a + b          //3.Los parametros o argumentos que va recibir 4.Cuerpo(return) lo que va a regresar nuestra funcion
-}
-console.log(suma(299, 1))   //5.Llamdo de la funcion 
-
-function calcularDescuento (precio, porcentajeDescuento){
-    const descuento = (precio * porcentajeDescuento) / 100
-    const precioConDescuento = precio - descuento
-
-    return precioConDescuento
+function square(x) {        
+    return x * x
 }
 
-const precio = 1299
-const porcentajeDescuento = 25
-const precioFinal = calcularDescuento(precio, porcentajeDescuento)
-
-console.log('Precio original $' + precio)
-console.log('Descuento ' + porcentajeDescuento + '%')
-console.log('Precio con descuento: $' + precioFinal)
-
-// function calculateDiscount (price, discountRate){
-//     const discount = (price * discountRate) / 100
-//     const priceWithDiscount = price - discount
-
-//     return priceWithDiscount
-// }
-
-// const price = 100
-// const discountRate = 20
-// const finalPrice = calculateDiscount(price, discountRate)
-
-// console.log('Original Price $' + price)
-// console.log('Discount ' + discountRate + '%')
-// console.log('Price with discount: $' + finalPrice)
-
-console.log('-------------------------------------------------------------------')
-
-//Clase 12 - Funciones vs Metodos 
-
-    /*Funcion: es un bloque de código reutilizable que realiza una tarea específica.
-    Puede o no estar asociada a un objeto.*/ 
-
-    /*Metodo: es una función que está asociada a un objeto. 
-    Cuando una función se convierte en propiedad de un objeto, 
-    se llama método. Los métodos son funciones, pero el término 
-    "método" se usa para resaltar su relación con un objeto específico.*/
-
-// Capacidades que tienen las funciones
-
-//1.Pasar funciones como argumentos ---> callback
-/* <------
-function a () {}
-function b (a) {}
-b(a)
-
-//2.Retornan funciones
-function a () {
-    function b () {} 
-    return b
+function addTen (y) {       
+    return y + 10
 }
 
-//3.Asignar funciones a variables ---> Expresion de funcion
-const a = function () {}
+const number = 5
+const finalResult = addTen(square(number))
+console.log(finalResult)
 
-//4.Tener propiedades y metodos 
-function a () {}
-const obj = {}
-a.call(obj)
+// funciones impuras - las funciones impuras cumples con los siguientes parametros 
 
-//5.Anidar funciones ---> nested functions 
-function a () {
-    function b () {
-        function c () {
+//Side Effects(efectos secundarios) ---> cualquier operacion que modifique un estado fuera de su ambito local 
+//1.Modificar variables globales
+//2.modificar parametros
+//3.solicitudes HTTP
+//4.Imprimir mensajes en pantalla o consola
+//5.Manipulacion del DOM
+//6.Obtener la hora actual
 
-        }
-        c()
-    } 
-    b()
-}
-a()
------> */ 
-//6.Alamcenar funciones en objetos
-const rocket = {
-    name: 'falcon 9',
-    launchMessage: function launchMessage () {
-        console.log('FLAMA!!!')
-    }
+function sum (a ,b) {
+    console.log('A: ', a)       //tiene efecto secundario(como registrar un log)
+    return a + b
 }
 
-rocket.launchMessage()
+let total = 0                   //variable global
+
+function sumaConEfecto () {     //modifica la variable global total 
+    total += a
+    return total
+}
+
+console.log('--------------------------------------------')
+
