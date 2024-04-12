@@ -81,9 +81,63 @@ const newHouse = {
 
 dogGreeting.call(newHouse)  //El metodo .call permite llamar a una funcion con valor 'this' especifico y argumentos individuales 
 
-function newDogGreeting(owner,address){console.log(`Hi, I'm ${this.dogName} and I live with ${owner} on ${address}`)}
+//Se define una  nueva funcion llamada 'newDogGreeting' que toma dos parametros 'propietario' y 'direccion'
+//El this en este codigo es como si le dijieramos 
+function newDogGreeting(owner,address){
+    console.log(`hola soy ${this.dogName} y vivo con ${owner} en ${address}`)
+}
 const owner='Juan'
-const address='gothams'
+const address='gotham'
 newDogGreeting.call(newHouse,owner,address)
 
+function mostrarMensaje() {
+    console.log(`Hola, ${this.nombre}`);
+}
+
+const persona = {
+    nombre: 'Carlos'
+};
+
+// Usamos 'call' para establecer 'this' a 'persona' dentro de 'mostrarMensaje'
+mostrarMensaje.call(persona);
+
 console.log('------------------------------------------')
+
+//Clase 15 - bind, call y apply ---> metodos fundamentales 
+
+const people = 'bruce'
+const location = 'ghotam'
+
+function greet(people, location) {
+    console.log(`hola soy ${this.name}, tu eres ${people}? vives en ${location}?`)
+}
+
+const newPerson = {
+    name: 'Juan'
+}
+
+//.call
+//permite llamar a una función con un valor this específico y argumentos pasados individualmente. 
+
+greet.call(newPerson, people, location) // ---> sintaxis 'funcion.call(thisArg, arg1, arg2, ..., argN)'
+
+//.apply
+//en lugar de pasar los argumentos de la función individualmente, apply() los toma como un arreglo. 
+
+const  necessaryValues = [people, location]
+greet.apply(newPerson, necessaryValues) // ---> sintaxis 'funcion.apply(thisArg, [argsArray])'
+
+//.bind
+//retorna una nueva función, la cual, cuando se llama, tiene su 'this' establecido al valor proporcionado, 
+//con una secuencia de argumentos anterior mente proporcionador o se le proporcionaran despues
+
+function saludar(lenguaje, tono) {
+    console.log(`${tono} hola en ${lenguaje} dice ${this.nombre}`);
+}
+  
+const usuario = {nombre: 'Diego'};
+const saludarUsuario = saludar.bind(usuario, 'francés'); //---> sintaxis 'const nuevaFuncion = funcion.bind(thisArg, argx)'
+
+saludarUsuario('gentilmente');  
+
+console.log('----------------------------------------------------------')
