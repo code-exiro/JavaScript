@@ -96,3 +96,29 @@ lambo.conducir(1000)
 ferrari.conducir(2000)
 lambo.informacion()
 ferrari.informacion()
+
+//10 tipos de funciones 
+
+//Declarativas
+function suma(a, b) {
+    return a + b
+}
+
+//Expresivas(anonimas)
+const suma = function(a, b) {
+    return a + b
+}
+
+//Arrow functions
+const suma = (a, b) => a + b
+
+//Funciones constructoras
+//ejemplos arriba
+
+//Funciones recursivas
+
+function factorial(n) {
+    if (n === 0 || n === 1) { return 1; }
+    else {return n * factorial(n - 1)}
+}
+
