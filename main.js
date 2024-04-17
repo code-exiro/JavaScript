@@ -25,4 +25,42 @@ if (y > 10) { // ---> sentencia if que incluye la expresion y > 10
 
 console.log('-----------------------------------------------------------')
 
-//Clase 20 
+//Clase 20 - project heroes
+
+function Heroe(name, power, weapon) {
+    this.name = name 
+    this.power = power
+    this.weapon = weapon
+    this.isLeader = false 
+    this.itsAlive = true
+}
+
+Heroe.prototype.displayInfo = function() {
+    console.log(`heroes information: 
+    Name: ${this.name}
+    Power: ${this.power}
+    Weapon: ${this.weapon}
+    ${this.isLeader ? 'Leader: si' : 'Leader: no'}
+    ${this.itsAlive ? 'Alive: si' : 'Alive: no'}
+    `)
+}
+
+Heroe.prototype.becomeLeader = function() {
+    this.isLeader = true
+    console.log(`${this.name} es el lider del equipo`)
+}
+
+Heroe.prototype.isDead = function() {
+    this.itsAlive = false
+    console.log(`${this.name} murio en la ultima mission`)
+}
+
+const batman = new Heroe('bruce', 'money', 'many weapons')
+const superman = new Heroe('clarck', 'strong', 'fist')
+const flash = new Heroe('barry', 'velocity', 'beam')
+
+batman.becomeLeader()
+batman.displayInfo()
+superman.displayInfo()
+flash.isDead()
+flash.displayInfo()
