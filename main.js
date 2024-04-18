@@ -1,68 +1,43 @@
-//Clase 21 - Operadores de comparacion 
+//Clase 23 - if estructura de control de flujo
 
-// ==    ---> Igualdad
-console.log(1 == 1); // true
-console.log('1' == 1); // true, porque '1' se convierte a 1
+//sintaxis de if
+// if (condicion) { 
+//     //(bloque de codigo a ejecutar si la condicion es verdadera)
+// }
 
-// ===   ---> Estrictamente igual
-console.log(1 === 1); // true
-console.log('1' === 1); // false, porque los tipos son diferentes
+const numero = 10;
+if (numero > 5) {      //if(condicion): bloque a ejecutar si la condicion es verdarea
+    console.log(`El ${numero} es mayor que 5`); 
+}
 
-// !=    ---> No igual  
-console.log(1 != 2); // true
-console.log(1 != '1'); // false, porque '1' se convierte a 1
+//else ---> bloque a ejecutar si la condicion es false
+const otroNumero = 3;
+if (otroNumero > 5) {
+    console.log(`El ${otroNumero} es mayor que 5`);
+} else {
+    console.log(`EL ${otroNumero} no es mayor que 5`);
+}
 
-// !==   ---> Estrictamente no igual
-console.log(1 !== '1'); // true
-console.log(1 !== 1); // false
+//else if ---> sentenica extra a evaluar 
+const unNumeroMas = 15;
 
-// >     ---> Mayor que 
-console.log(2 > 1); // true
-console.log(1 > 2); // false
+if (unNumeroMas > 20) {
+    console.log(`El ${unNumeroMas} es mayor que 20`);
+} else if (unNumeroMas > 10) {
+    console.log(`El ${unNumeroMas} es mayor que 10 pero no mas que 20`)
+} else {
+    console.log(`${unNumeroMas} es menor de 10`)
+}
 
-// <     ---> Menor que
-console.log(2 < 3); // true
-console.log(3 < 2); // false
+//otro ejemplo 
+let nombre = 'Nico';
 
-// >=    ---> Mayor o igual que
-console.log(3 >= 2); // true
-console.log(2 >= 3); // false
-
-// <=    ---> Menor o igual que
-console.log(2 <= 3); // true
-console.log(3 <= 2); // false
-
-//validaciones en la consola del navegador ya que esta entiende JS
-const a = 10;
-const b = 20;
-const c = "10";
-
-a == b;    //false
-a === c;   //false    
-a != b;    //true
-a !== c;   //true    
-a > b;     //false
-a <= b;    //true
-a > c;     //false
+if (nombre === 'Diego') {
+    console.log("Hola Diego");
+} else if (nombre === 'Nico') {
+    console.log("Hola Nico");
+} else {
+    console.log('quien chota sos')
+}
 
 console.log('------------------------------------------------------------')
-
-//Clase 22 - Operadores logicos 
-
-// &&    ---> AND true si ambos son verdaderos, si uno de los operandos es falso es false 
-console.log(true && true); // true
-console.log(true && false); // false
-
-// ||    ---> OR true si al menos uno es verdadero, si ambos son falsos es false
-console.log(true || false); // true
-console.log(false || false); // false
-
-// !     ---> NOT invierte el valor booleano de una condicion  
-console.log(!true); // false
-console.log(!false); // true
-
-a == b && a === c;   //false
-a != b || a === c;   //true
-!(a === c)           //true
-
-console.log('------------------------------------------------------')
