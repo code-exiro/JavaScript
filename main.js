@@ -1,66 +1,48 @@
-//Clase 19 - Expresiones y sentencias 
+//Clase 21 - Operadores de comparacion 
 
-//Expresion es cualquier unidad de codigo que resuelve o evalua un valor 
-    //  Valores literales: como 42, "hello", o true.
-    //  Operaciones aritméticas: como 1 + 2, que evalúa a 3.
-    //  Expresiones lógicas: como true && false, que evalúa a false.
-    //  lamadas a funciones: como console.log("Hello, world!"), que realiza una acción y, 
-    //  en este caso, evalúa a undefined porque console.log no retorna nada.
 
-//Sentencia(Declaracion) dicta una accion a ser llevada a cabo. 
-    //  A diferencia de las expresiones, que producen valores, las sentencias realizan acciones 
-    //  Declaraciones de variables: como let x = 10; o const name = "Alice";.
-    //  Estructuras de control: como if, for, while, que dictan el flujo de ejecución del programa.
-    //  Declaraciones de funciones: como function greet() { console.log("Hello!"); }. 
- 
-//Muchas sentencias utilizan expresiones dentro de ellas para determinar cómo actuar.
-//Por ejemplo, en una sentencia if, la condición if (x > 10) incluye la expresión x > 10.
+// ==    ---> Igualdad
+console.log(1 == 1); // true
+console.log('1' == 1); // true, porque '1' se convierte a 1
 
-let x = 10; // ---> sentencia 
-let y = x + 10; // ---> sentencia que incluye la expresion x + 10
+// ===   ---> Estrictamente igual
+console.log(1 != 2); // true
+console.log(1 != '1'); // false, porque '1' se convierte a 1
 
-if (y > 10) { // ---> sentencia if que incluye la expresion y > 10
-    console.log('y es mayor que 10'); // ---> sentencia 
-}
+// !=    ---> No igual  
+console.log(1 != 2); // true
+console.log(1 != '1'); // false, porque '1' se convierte a 1
 
-console.log('-----------------------------------------------------------')
+// !==   ---> Estrictamente no igual
+console.log(1 !== '1'); // true
+console.log(1 !== 1); // false
 
-//Clase 20 - project heroes
+// >     ---> Mayor que 
+console.log(2 > 1); // true
+console.log(1 > 2); // false
 
-function Heroe(name, power, weapon) {
-    this.name = name 
-    this.power = power
-    this.weapon = weapon
-    this.isLeader = false 
-    this.itsAlive = true
-}
+// <     ---> Menor que
+console.log(2 < 3); // true
+console.log(3 < 2); // false
 
-Heroe.prototype.displayInfo = function() {
-    console.log(`heroes information: 
-    Name: ${this.name}
-    Power: ${this.power}
-    Weapon: ${this.weapon}
-    ${this.isLeader ? 'Leader: si' : 'Leader: no'}
-    ${this.itsAlive ? 'Alive: si' : 'Alive: no'}
-    `)
-}
+// >=    ---> Mayor o igual que
+console.log(3 >= 2); // true
+console.log(2 >= 3); // false
 
-Heroe.prototype.becomeLeader = function() {
-    this.isLeader = true
-    console.log(`${this.name} es el lider del equipo`)
-}
+// <=    ---> Menor o igual que
+console.log(2 <= 3); // true
+console.log(3 <= 2); // false
 
-Heroe.prototype.isDead = function() {
-    this.itsAlive = false
-    console.log(`${this.name} murio en la ultima mission`)
-}
+const a = 10;
+const b = 20;
+const c = "10";
 
-const batman = new Heroe('bruce', 'money', 'many weapons')
-const superman = new Heroe('clarck', 'strong', 'fist')
-const flash = new Heroe('barry', 'velocity', 'beam')
+//validaciones en la consola del navegador ya que esta entiende JS
 
-batman.becomeLeader()
-batman.displayInfo()
-superman.displayInfo()
-flash.isDead()
-flash.displayInfo()
+a == b;     //false
+a === c;    //false    
+a != b;     //true
+a !== c;    //true    
+a > b;      //false
+a <= b;     //true
+a > c       //false
