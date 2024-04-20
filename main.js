@@ -41,3 +41,28 @@ if (nombre === 'Diego') {
 }
 
 console.log('------------------------------------------------------------')
+
+//Clase 24 - proyext 
+
+// Math.random() es una funcion que genera un numero decimal aleatorio entre 0(inclusive) y 1(exclusivo) 0.0000000 a 0.999999
+// Math.random() no recibe argumentos o parametros 
+// Inclusive: el numero inicial(o incluido) en Math.random es 0 por lo que 0 esta en las posibilidades
+// Exclusivo: el numero limite(o excluido) en Math.random es 1 por lo que 1 no esta dentro de las posibildades 
+// Ejemplo: 0.37178392649 * 10(el multiplicar por 10 se recorre el '.' un espacio entonces el rango ahora es desde 0 hasta un poco menos de 10.)
+// Ejemplo: 0.37178392649 * 10 + 1 (Al sumar 1 se modifica el rango de los números a (1, 11) ahora va de 1 hasta un poco menos de 11.)
+
+// Math.floor(): se usa para redondear hacia abajo al entero más cercano. Esto asegura que el número esté del 1 al 10 ambos inclusive(incluidos)
+
+// prompt() es una funcion que muestra un cuadro de dialogo en el NAVEGADOR que solocita al usuario algo
+
+const numeroSecreto = Math.floor(Math.random() * 10 + 1);
+
+const numeroJugador = parseInt(
+    prompt("Adivina el numero secreto entre el 1 y el 10")
+);
+
+if(numeroJugador == numeroSecreto) { 
+    console.log(`FELICIDADES es ${numeroJugador}`)
+} else {
+    console.log(`intenta otra vez el numero era ${numeroSecreto}`)
+}
